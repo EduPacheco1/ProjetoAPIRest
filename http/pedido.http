@@ -1,0 +1,44 @@
+POST http://localhost:8080/api/pedidos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDYwMjY2LCJleHAiOjE2OTgxNDY2NjZ9.BrzLFxGH_eceAky3ud0mcjiOWLOxgMo5kDLjYeJEF3g
+# adicionar 
+
+{
+    "codPedido": "00bs235",
+    "obs": "Venda 2",
+    "usuario": {
+        "usuarioId": 1
+    },
+    "formaPagamento": {
+        "pagamentoId": 1
+    },
+    "itens": [
+
+        {
+            "quantidade": 1,
+            "produto": {
+                "produtoId": 4
+            }
+        }
+    ]  
+}
+
+###
+
+# obterTodos
+
+GET http://localhost:8080/api/pedidos
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDYwMjY2LCJleHAiOjE2OTgxNDY2NjZ9.BrzLFxGH_eceAky3ud0mcjiOWLOxgMo5kDLjYeJEF3g
+
+
+###
+# obterPorId
+GET http://localhost:8080/api/pedidos/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDYwMjY2LCJleHAiOjE2OTgxNDY2NjZ9.BrzLFxGH_eceAky3ud0mcjiOWLOxgMo5kDLjYeJEF3g
+
+###
+
+# cancelar pedido 
+
+PUT http://localhost:8080/api/pedidos/cancelar/10
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjk4MDYwMjY2LCJleHAiOjE2OTgxNDY2NjZ9.BrzLFxGH_eceAky3ud0mcjiOWLOxgMo5kDLjYeJEF3g
